@@ -245,8 +245,9 @@ document.getElementById('joinRoomBtn').addEventListener('click', () => {
   
   if (!roomId) return alert('Please enter a Room ID');
   // else statusroomDiv.textContent = `you joined Room ${roomId}`;
-
-  socket = new WebSocket('ws://localhost:3000'); // آدرس WebSocket سرور
+  socket = new WebSocket('ws://localhost:3000');
+  socket = new WebSocket('https://s2st-2.onrender.com'); // آدرس WebSocket سرور
+  
   
   socket.onopen = () => {
     console.log('WebSocket connected');
@@ -268,8 +269,8 @@ document.getElementById('createRoomBtn').addEventListener('click', () => {
   roomId = document.getElementById('roomId').value.trim();
   if (!roomId) return alert('Please enter a Room ID');
   // else statusroomDiv.textContent = `Room ${roomId} is created`;
-  
-  socket = new WebSocket('ws://localhost:3000'); // آدرس WebSocket سرور
+  // socket = new WebSocket('ws://localhost:3000');
+  socket = new WebSocket('https://s2st-2.onrender.com'); // آدرس WebSocket سرور
   
   socket.onopen = () => {
     console.log('WebSocket connected');
